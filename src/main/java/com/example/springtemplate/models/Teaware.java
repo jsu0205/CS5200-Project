@@ -2,26 +2,25 @@ package com.example.springtemplate.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="teas")
-public class Tea {
+@Table(name="teawares")
+public class Teaware {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private TeaCategory type;
-    private String producer;
+    private TeawareCategory type;
+    private Integer capacity;
     private String image;
 
-    public Tea(Integer id, String name, TeaCategory type, String producer, String image) {
+    public Teaware(Integer id, String name, TeawareCategory type, Integer capacity, String image) {
         this.id = id;
         this.name = name;
         this.type = type;
-        this.producer = producer;
+        this.capacity = capacity;
         this.image = image;
     }
 
-    public Tea() {
-
+    public Teaware() {
     }
 
     public Integer getId() {
@@ -40,20 +39,20 @@ public class Tea {
         this.name = name;
     }
 
-    public TeaCategory getType() {
+    public TeawareCategory getType() {
         return type;
     }
 
-    public void setType(TeaCategory type) {
+    public void setType(TeawareCategory type) {
         this.type = type;
     }
 
-    public String getProducer() {
-        return producer;
+    public Integer getCapacity() {
+        return capacity;
     }
 
-    public void setProducer(String producer) {
-        this.producer = producer;
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public String getImage() {
