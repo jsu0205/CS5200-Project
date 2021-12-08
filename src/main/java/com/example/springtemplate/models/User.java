@@ -1,13 +1,19 @@
 package com.example.springtemplate.models;
+import javax.persistence.*;
 
+@Entity
+@Table(name="users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
     private String username;
     private String password;
-    private String profilePicture;
-    private String handle;
+    private String email;
+    private String dateOfBirth;
+    private String accountCreated;
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
@@ -19,17 +25,19 @@ public class User {
     public void setUsername(String username) { this.username = username; }
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
-    public String getProfilePicture() { return profilePicture; }
-    public void setProfilePicture(String profilePicture) { this.profilePicture = profilePicture; }
-    public String getHandle() { return handle; }
-    public void setHandle(String handle) { this.handle = handle; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getDateOfBirth() { return dateOfBirth; }
+    public void setDateOfBirth(String dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public String getAccountCreated() { return accountCreated; }
+    // public void setAccountCreated(String accountCreated) { this.accountCreated = accountCreated; }
 
-    public User(String username, String password, String first_name, String last_name, String profile_picture) {
+    public User(String username, String password, String first_name, String last_name, String email) {
         this.username = username;
         this.password = password;
         this.firstName = first_name;
         this.lastName = last_name;
-        this.profilePicture = profile_picture;
+        this.email = email;
     }
 
     public User() {}
