@@ -31,7 +31,7 @@ CREATE TABLE `teawares` (
   PRIMARY KEY (`id`),
   KEY `teaware_type_idx` (`type`),
   CONSTRAINT `teaware_type` FOREIGN KEY (`type`) REFERENCES `teaware_categories` (`teaware_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `teawares` (
 
 LOCK TABLES `teawares` WRITE;
 /*!40000 ALTER TABLE `teawares` DISABLE KEYS */;
-INSERT INTO `teawares` VALUES (7,'Fang Xia Hongni Teapot','YIXING_CLAY',105,'essenceoftea.com'),(8,'Basic White Gaiwan','GAIWAN',80,'gaiwan.com'),(9,'Ming Dynasty Blue Line Cup','TEACUP',50,'blue.com'),(10,'Beeg Pot','TEAPOT',600,'beeg.com'),(11,'Towel','MISCELLANEOUS',NULL,NULL);
+INSERT INTO `teawares` VALUES (7,'Teapot','YIXING_CLAY',100,'essenceoftea.com'),(8,'Basic White Gaiwan','GAIWAN',80,'gaiwan.com'),(9,'Ming Dynasty Blue Line Cup','TEACUP',50,'blue.com'),(11,'Towel','MISCELLANEOUS',NULL,NULL),(12,'Woofah','GAIWAN',500,NULL);
 /*!40000 ALTER TABLE `teawares` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:56

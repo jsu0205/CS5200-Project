@@ -26,7 +26,7 @@ CREATE TABLE `vendors` (
   `id` int NOT NULL,
   `business_name` varchar(45) DEFAULT NULL,
   `business_email` varchar(45) DEFAULT NULL,
-  `aboutUs` varchar(4500) DEFAULT NULL,
+  `about_us` varchar(4500) DEFAULT NULL,
   `verified` decimal(1,0) DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `vendor_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -39,7 +39,7 @@ CREATE TABLE `vendors` (
 
 LOCK TABLES `vendors` WRITE;
 /*!40000 ALTER TABLE `vendors` DISABLE KEYS */;
-INSERT INTO `vendors` VALUES (5,'TeasWeLike','teaswelike@aol.com','We are a group of friends whoo have spent several years drinking and searching for good teas.',1),(6,'Tea Habitat','teahabitat@aol.com','At Tea Habitat, tea connoisseurship is taken to the extreme',1);
+INSERT INTO `vendors` VALUES (5,'TeasWeLike','teethwelike@aol.com','We are a group of friends who have spent several years drinking and searching for good teas.',1),(6,'Tea Habitat','teahabitat@aol.com','At Tea Habitat, tea connoisseurship is taken to the extreme',1),(15,'asdf','sadf','fdsa',0);
 /*!40000 ALTER TABLE `vendors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:55

@@ -24,8 +24,8 @@ DROP TABLE IF EXISTS `customers`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customers` (
   `id` int NOT NULL,
-  `shippingAddress` varchar(450) DEFAULT NULL,
-  `moneySpent` decimal(15,0) DEFAULT NULL,
+  `shipping_address` varchar(450) DEFAULT NULL,
+  `money_spent` decimal(15,0) DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `customers_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -37,7 +37,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'23 Oak St',10),(2,'49 Pine Ln',300),(3,'2 Spruce St',500),(4,'1 Mahogany Ln',65),(7,'29 Mars Pl',20000);
+INSERT INTO `customers` VALUES (1,'23 Oak St',10),(2,'49 Pine Ln',300),(3,'2 Spruce St',500),(4,'1 Mahogany Ln',65),(7,'29 Mars Pl',20000),(14,'test address',144);
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:54

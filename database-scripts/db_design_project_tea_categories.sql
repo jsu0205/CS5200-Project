@@ -34,7 +34,7 @@ CREATE TABLE `tea_categories` (
 
 LOCK TABLES `tea_categories` WRITE;
 /*!40000 ALTER TABLE `tea_categories` DISABLE KEYS */;
-INSERT INTO `tea_categories` VALUES ('BLACK'),('GREEN'),('OOLONG'),('RAW_PUER'),('WHITE');
+INSERT INTO `tea_categories` VALUES ('BLACK'),('GREEN'),('OOLONG'),('RAW_PUER'),('RIPE_PUER'),('WHITE');
 /*!40000 ALTER TABLE `tea_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:54

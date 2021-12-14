@@ -31,7 +31,7 @@ CREATE TABLE `teas` (
   PRIMARY KEY (`id`),
   KEY `tea_type_idx` (`type`),
   CONSTRAINT `tea_type` FOREIGN KEY (`type`) REFERENCES `tea_categories` (`tea_categories`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `teas` (
 
 LOCK TABLES `teas` WRITE;
 /*!40000 ALTER TABLE `teas` DISABLE KEYS */;
-INSERT INTO `teas` VALUES (1,'Silver Needles','WHITE','Yunnan Sourcing','yunnansourcing.com'),(2,'Dragon Well','GREEN','Tea Habitat','teahabitat.com'),(3,'Wuyi Shuixian','OOLONG','Wuyi Origins','wuyiorigin.com'),(4,'Black Gold','BLACK','Yunnan Sourcing','yunnansourcing.com'),(5,'12c Sheng','RAW_PUER','TeasWeLike','teaswelike.com'),(6,'HongTaiChang 90s',NULL,'HongTaiChung','teaswelike.com');
+INSERT INTO `teas` VALUES (1,'Silver Needles','WHITE','Yunnan Sourcing','yunnansourcing.com'),(2,'Dragon Well','GREEN','Tea Habitat','teahabitat.com'),(3,'Wuyi Shuixian','OOLONG','Wuyi Origins','wuyiorigin.com'),(4,'Black Gold','BLACK','Yunnan Sourcing','yunnansourcing.com'),(5,'12c Sheng','RAW_PUER','TeasWeLike','teaswelike.com'),(6,'HongTaiChang 90s','RIPE_PUER','HongTaiChung','teaswelike.com'),(12,'Ol Reliable','RIPE_PUER','White2Tea','w2t.com'),(13,'Honey Gold','BLACK','White2Teeth',NULL),(15,'updated','BLACK','updated',NULL);
 /*!40000 ALTER TABLE `teas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:19
+-- Dump completed on 2021-12-14  7:05:54

@@ -29,6 +29,7 @@ CREATE TABLE `purchases` (
   `customer_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL,
   `price` decimal(10,0) DEFAULT NULL,
+  `vendor_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `customer_purchase_idx` (`customer_id`),
   KEY `tea_purchase_idx` (`tea_id`),
@@ -36,7 +37,7 @@ CREATE TABLE `purchases` (
   CONSTRAINT `customer_purchase` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tea_purchase` FOREIGN KEY (`tea_id`) REFERENCES `teas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `teaware_purchase` FOREIGN KEY (`teaware_id`) REFERENCES `teawares` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,7 @@ CREATE TABLE `purchases` (
 
 LOCK TABLES `purchases` WRITE;
 /*!40000 ALTER TABLE `purchases` DISABLE KEYS */;
-INSERT INTO `purchases` VALUES (1,4,NULL,2,100,0),(2,2,NULL,1,50,0);
+INSERT INTO `purchases` VALUES (13,2,NULL,4,500,1,5),(14,NULL,7,7,3,15,6),(15,2,NULL,7,50,50,NULL),(18,NULL,8,4,12,13,NULL),(21,NULL,NULL,NULL,12,13,NULL);
 /*!40000 ALTER TABLE `purchases` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:55

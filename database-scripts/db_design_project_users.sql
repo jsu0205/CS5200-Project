@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `date_of_birth` datetime DEFAULT NULL,
   `account_created` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Charlie','Lee','clee17','Clee17','clee17@gmail.com',NULL,'2021-11-22 16:53:49'),(2,'Ashley','Kim','ak2k','Passw','ak2k@gmail.com',NULL,'2021-11-22 16:53:49'),(3,'John','Su','jsu0205','passpass','16jsu@gmail.com',NULL,'2021-11-22 16:53:49'),(4,'Budy','Zhang','bzhang','cHickenP','jzh@gmail.com',NULL,'2021-11-22 16:53:49'),(5,'Marco','Gualt','mgualt','smart','smarty@gmail.com',NULL,'2021-11-22 16:53:49'),(6,'Imen','Son','habitat','habits','water@gmail.com',NULL,'2021-11-22 16:53:49'),(7,'Yuchen','Zhang','fatd','jabba','jarjar@gmail.com',NULL,'2021-11-22 16:59:20');
+INSERT INTO `users` VALUES (1,'Charlie','Lee','clee17','Clee17','clee17@gmail.com',NULL,'2021-11-22 16:53:49'),(2,'Ashley','Kim','ak2k','Passw','ak2k@gmail.com',NULL,'2021-11-22 16:53:49'),(3,'John','Su','jsu0205','passpass','16jsu@gmail.com',NULL,'2021-11-22 16:53:49'),(4,'Budy','Zhang','bzhang','cHickenP','jzh@gmail.com',NULL,'2021-11-22 16:53:49'),(5,'Marco','Gualt','mgualt','smart','smarty@gmail.com',NULL,'2021-11-22 16:53:49'),(6,'Imen','Son','habitat','habits','water@gmail.com',NULL,'2021-11-22 16:53:49'),(7,'Yuchen','Zhang','fatd','jabba','jarjar@gmail.com',NULL,'2021-11-22 16:59:20'),(8,'chan','par','cpar','123123',NULL,NULL,NULL),(14,'db','design','customer','test',NULL,NULL,NULL),(15,'vendor','test','vending','machine',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 17:33:18
+-- Dump completed on 2021-12-14  7:05:54
