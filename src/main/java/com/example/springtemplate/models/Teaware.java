@@ -1,5 +1,8 @@
 package com.example.springtemplate.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="teawares")
@@ -8,9 +11,24 @@ public class Teaware {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Enumerated(EnumType.STRING)
     private TeawareCategory type;
     private Integer capacity;
     private String image;
+    @OneToMany(mappedBy = "teaware")
+    @JsonIgnore
+    private List<Purchase> purchases;
+    @OneToMany(mappedBy = "teaware")
+    @JsonIgnore
+    private List<Inventory> inventories;
+
+    public enum TeawareCategory {
+        TEACUP,
+        GAIWAN,
+        TEAPOT,
+        YIXING_CLAY,
+        MISCELLANEOUS
+    }    
 
     public Teaware(Integer id, String name, TeawareCategory type, Integer capacity, String image) {
         this.id = id;
@@ -21,6 +39,22 @@ public class Teaware {
     }
 
     public Teaware() {
+    }
+
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<Purchase> purchases) {
+        this.purchases = purchases;
+    }
+
+    public List<Inventory> getInventories() {
+        return inventories;
+    }
+
+    public void setInventories(List<Inventory> inventories) {
+        this.inventories = inventories;
     }
 
     public Integer getId() {

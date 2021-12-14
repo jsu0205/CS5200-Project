@@ -16,4 +16,16 @@ public interface PurchaseRestRepository
     @Query(value = "SELECT * FROM purchases WHERE id=:purchaseId",
             nativeQuery = true)
     public Purchase findPurchaseById(@Param("purchaseId") Integer id);
+
+    @Query(value = "SELECT * FROM purchases WHERE vendor_id=:vendorId",
+            nativeQuery = true)
+    public List<Purchase> findPurchasesByVendorId(@Param("vendorId") Integer id);
+
+    @Query(value = "SELECT * FROM purchases WHERE tea_id=:teaId",
+            nativeQuery = true)
+    public List<Purchase> findPurchasesByTeaId(@Param("teaId") Integer id);
+
+    @Query(value = "SELECT * FROM purchases WHERE teaware_id=:teawareId",
+            nativeQuery = true)
+    public List<Purchase> findPurchasesByTeawareId(@Param("teawareId") Integer id);
 }

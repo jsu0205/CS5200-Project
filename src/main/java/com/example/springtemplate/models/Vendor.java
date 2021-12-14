@@ -1,27 +1,34 @@
 package com.example.springtemplate.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="vendors")
-public class Vendor extends User {
+public class Vendor {
     @Id
     private Integer id;
     private String businessName;
     private String businessEmail;
     private String aboutUs;
     private boolean verified;
-
-    public Vendor(String username, String password, String first_name, String last_name, String email, Integer id, String businessName, String businessEmail, String aboutUs, boolean verified) {
-        super(username, password, first_name, last_name, email);
-        this.id = id;
-        this.businessName = businessName;
-        this.businessEmail = businessEmail;
-        this.aboutUs = aboutUs;
-        this.verified = verified;
-    }
+    @OneToMany(mappedBy = "vendor")
+    @JsonIgnore
+    private List<Inventory> inventories;
+    @OneToMany(mappedBy = "vendor")
+    @JsonIgnore
+    private List<Subscription> subscriptions;
 
     public Vendor() {
+    }
 
+    public List<Subscription> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(List<Subscription> subscriptions) {
+        this.subscriptions = subscriptions;
     }
 
     public Vendor(Integer id, String businessName, String businessEmail, String aboutUs, boolean verified) {
@@ -32,12 +39,18 @@ public class Vendor extends User {
         this.verified = verified;
     }
 
-    @Override
+    public List<Inventory> getInventories() {
+        return inventories;
+    }
+
+    public void setInventories(List<Inventory> inventories) {
+        this.inventories = inventories;
+    }
+
     public Integer getId() {
         return id;
     }
 
-    @Override
     public void setId(Integer id) {
         this.id = id;
     }

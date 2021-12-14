@@ -26,9 +26,7 @@ const UserList = () => {
                   <li className = "list-group-item"
                   key={user.id}>
                   <Link to={`/users/${user.id}`}>
-                      {user.firstName},
-                      {user.lastName},
-                      {user.username}
+                      ID: {user.id}, {user.firstName} {user.lastName}, {user.username}
                   </Link>
                   </li>)
             }

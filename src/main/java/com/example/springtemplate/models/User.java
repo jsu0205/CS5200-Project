@@ -30,7 +30,7 @@ public class User {
     public String getDateOfBirth() { return dateOfBirth; }
     public void setDateOfBirth(String dateOfBirth) { this.dateOfBirth = dateOfBirth; }
     public String getAccountCreated() { return accountCreated; }
-    // public void setAccountCreated(String accountCreated) { this.accountCreated = accountCreated; }
+    public void setAccountCreated(String accountCreated) { this.accountCreated = accountCreated; }
 
     public User(String username, String password, String first_name, String last_name, String email) {
         this.username = username;

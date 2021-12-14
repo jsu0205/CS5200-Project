@@ -7,6 +7,12 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne
+    private Vendor vendor;
+    @ManyToOne
+    private Teaware teaware;
+    @ManyToOne
+    private Tea tea;
     private Integer quantity;
     private float price;
 
@@ -26,6 +32,30 @@ public class Inventory {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    public Teaware getTeaware() {
+        return teaware;
+    }
+
+    public void setTeaware(Teaware teaware) {
+        this.teaware = teaware;
+    }
+
+    public Tea getTea() {
+        return tea;
+    }
+
+    public void setTea(Tea tea) {
+        this.tea = tea;
     }
 
     public Integer getQuantity() {

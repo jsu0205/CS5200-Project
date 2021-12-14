@@ -16,4 +16,16 @@ public interface InventoryRestRepository
     @Query(value = "SELECT * FROM inventories WHERE id=:inventoryId",
             nativeQuery = true)
     public Inventory findInventoryById(@Param("inventoryId") Integer id);
+
+    @Query(value = "SELECT * FROM inventories WHERE vendor_id=:vendorId",
+            nativeQuery = true)
+    public List<Inventory> findInventoryByVendorId(@Param("vendorId") Integer id);
+
+    @Query(value = "SELECT * FROM inventories WHERE tea_id=:teaId",
+            nativeQuery = true)
+    public List<Inventory> findInventoryByTeaId(@Param("teaId") Integer id);
+
+    @Query(value = "SELECT * FROM inventories WHERE teaware_id=:teawareId",
+            nativeQuery = true)
+    public List<Inventory> findInventoryByTeawareId(@Param("teawareId") Integer id);
 }

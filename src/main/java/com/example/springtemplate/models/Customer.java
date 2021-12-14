@@ -1,22 +1,29 @@
 package com.example.springtemplate.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="customers")
-public class Customer extends User {
+public class Customer {
     @Id
     private Integer id;
     private String shippingAddress;
     private float moneySpent;
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<Purchase> purchases;
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<Subscription> subscriptions;
 
-    public Customer(String username, String password, String first_name, String last_name, String email, Integer id, String shippingAddress, float moneySpent) {
-        super(username, password, first_name, last_name, email);
-        this.id = id;
-        this.shippingAddress = shippingAddress;
-        this.moneySpent = moneySpent;
+    public List<Subscription> getSubscriptions() {
+        return subscriptions;
     }
 
-    public Customer() {
+    public void setSubscriptions(List<Subscription> subscriptions) {
+        this.subscriptions = subscriptions;
     }
 
     public Customer(Integer id, String shippingAddress, float moneySpent) {
@@ -25,12 +32,21 @@ public class Customer extends User {
         this.moneySpent = moneySpent;
     }
 
-    @Override
+    public Customer() {
+    }
+
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<Purchase> purchases) {
+        this.purchases = purchases;
+    }
+
     public Integer getId() {
         return id;
     }
 
-    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -50,6 +66,4 @@ public class Customer extends User {
     public void setMoneySpent(float moneySpent) {
         this.moneySpent = moneySpent;
     }
-
-
 }

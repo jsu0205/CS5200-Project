@@ -4,7 +4,6 @@ export const findAllUsers = () =>
     fetch(USERS_URL)
         .then(response => response.json())
 
-
 export const findUserById = (id) =>
     fetch(`${USERS_URL}/${id}`)
         .then(response => response.json())

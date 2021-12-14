@@ -7,8 +7,15 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne
+    private Customer customer;
+    @ManyToOne
+    private Teaware teaware;
+    @ManyToOne
+    private Tea tea;
     private Integer quantity;
     private float price;
+
 
     public Purchase(Integer id, Integer quantity, float price) {
         this.id = id;
@@ -25,6 +32,30 @@ public class Purchase {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Teaware getTeaware() {
+        return teaware;
+    }
+
+    public void setTeaware(Teaware teaware) {
+        this.teaware = teaware;
+    }
+
+    public Tea getTea() {
+        return tea;
+    }
+
+    public void setTea(Tea tea) {
+        this.tea = tea;
     }
 
     public Integer getQuantity() {

@@ -3,7 +3,7 @@ const {useParams, useHistory} = window.ReactRouterDOM;
 const {useState, useEffect} = React;
 
 const UserFormEditor = () => {
-    // const history = useHistory()
+    const historyRouter = useHistory()
     const {id} = useParams();
     const [user, setUser] = useState({})
     useEffect(() => {
@@ -15,9 +15,12 @@ const UserFormEditor = () => {
     const updateUser = (id, newUser) =>
         userService.updateUser(id, newUser)
             .then(() => history.back())
-    const createUser = (user) =>
+    const createVendor = (user) =>
         userService.createUser(user)
-            .then(() => history.back())
+            .then(() => historyRouter.push("/vendors/new"))
+    const createCustomer = (user) =>
+        userService.createUser(user)
+            .then(() => historyRouter.push("/customers/new"))
     const deleteUser = (id) =>
         userService.deleteUser(id)
             .then(() => history.back())
@@ -28,7 +31,8 @@ const UserFormEditor = () => {
         <div>
             <h2>User Editor</h2>
             <label>Id</label>
-            <input value = {user.id}
+            <input disabled
+                value = {user.id}
                    className="form-control"
             />
             <label>First Name</label>
@@ -62,16 +66,20 @@ const UserFormEditor = () => {
             <br/>
 
             <button onClick = {() => { history.back() }}
-                    className="btn btn-warning">Cancel</button>
+                    className="btn btn-warning">Back</button>
 
             <button onClick = {() => deleteUser(user.id)}
-                    className="btn btn-danger">Delete</button>
+                    className="btn btn-danger">Delete User</button>
 
             <button onClick = {() => updateUser(user.id, user)}
-                className="btn btn-primary">Save</button>
+                className="btn btn-primary">Save User</button>
 
-            <button onClick = {() => createUser(user)}
-                className="btn btn-success">Create</button>
+            <br/>
+            <button onClick = {() => createCustomer(user)}
+                className="btn btn-success">Create Customer</button>
+
+            <button onClick = {() => createVendor(user)}
+                    className="btn btn-success">Create Vendor</button>
         </div>
     )
 }
